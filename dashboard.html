@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Issues Tracker</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    body { background: #f6f8fa; }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+<nav class="bg-gray-900 text-white px-6 py-3 flex justify-between items-center flex-wrap gap-2">
+
+  <div class="flex items-center gap-2">
+    <img src="assets/github-logo.png" class="w-9 h-9">
+    <h1 class="font-semibold">GitHub Issues Tracker</h1>
+  </div>
+
+  <div class="flex gap-3 items-center flex-wrap">
+    <input
+      id="search-input"
+      type="text"
+      placeholder="Search issues..."
+      class="input input-sm w-48 bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+    />
+    <button
+      onclick="handleSearch()"
+      class="btn btn-sm bg-purple-600 hover:bg-purple-700 text-white border-none">
+      Search
+    </button>
+    <button class="btn btn-sm bg-purple-600 hover:bg-purple-700 text-white border-none">
+      + New Issue
+    </button>
+  </div>
+
+</nav>
+
+<main class="max-w-7xl mx-auto p-6">
+
+  <div class="bg-white p-3 rounded-lg shadow flex gap-2 mb-4">
+    <button id="tab-all"    onclick="setTab('all')"    class="tab-btn active-tab">All</button>
+    <button id="tab-open"   onclick="setTab('open')"   class="tab-btn">Open</button>
+    <button id="tab-closed" onclick="setTab('closed')" class="tab-btn">Closed</button>
+  </div>
+
+  <div class="bg-white p-5 rounded-lg shadow flex justify-between items-center mb-6 flex-wrap gap-3">
+
+    <div class="flex gap-3 items-center">
+      <img src="assets/Aperture.png" class="w-10 h-10">
+
+      <div>
+        <h2 id="total-count" class="font-bold text-lg">Loading issues...</h2>
+        <p class="text-gray-500 text-sm">Track and manage your project issues</p>
+      </div>
+    </div>
+
+    <div class="flex gap-4 text-sm">
+      <div class="flex gap-1 items-center">
+        <span class="status-dot-open"></span>
+        <span id="open-count">0 Open</span>
+      </div>
+      <div class="flex gap-1 items-center">
+        <span class="status-dot-closed"></span>
+        <span id="closed-count">0 Closed</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div
+    id="issues-grid"
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
+  >
+    <div class="spinner-wrap" style="grid-column:1/-1">
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+</main>
+
+<div
+  id="modal-overlay"
+  style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); align-items:center; justify-content:center; z-index:9999; padding:20px;"
+>
+  <div class="modal-box">
+
+    <div id="modal-loading" class="spinner-wrap" style="display:none;">
+      <div class="spinner"></div>
+    </div>
+
+    <div id="modal-content"></div>
+
+    <div class="flex justify-end mt-6">
+      <button onclick="closeModal()" class="btn btn-sm bg-purple-600 hover:bg-purple-700 text-white border-none">
+        Close
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script src="api.js"></script>
+<script src="utils.js"></script>
+<script src="dashboard.js"></script>
+
+</body>
+</html>
