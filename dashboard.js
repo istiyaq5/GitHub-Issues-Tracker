@@ -29,8 +29,8 @@ function renderIssues(issues) {
     const status    = (issue.status || '').toLowerCase();
     const borderCls = status === 'open' ? 'border-open' : 'border-closed';
     const statusImg = status === 'open'
-      ? `<img src="assets/Open-Status.png" class="w-5 h-5" alt="open">`
-      : `<img src="assets/Closed-Status.png" class="w-5 h-5" alt="closed">`;
+      ? `<img src="./assets/Open-Status.png" class="w-5 h-5" alt="open">`
+      : `<img src="./assets/Closed-Status.png" class="w-5 h-5" alt="closed">`;
     const labelsHtml = issue.labels && issue.labels.length
       ? `<div class="flex flex-wrap gap-1 mt-2">${renderLabels(issue.labels)}</div>`
       : '';
@@ -104,11 +104,7 @@ document.getElementById('search-input').addEventListener('keydown', e => {
   if (e.key === 'Enter') handleSearch();
 });
 
-/* ══════════════════════════════════════════════════════
-   MODAL — openModal(cardElement)
-   Reads issue data directly from the card's data-issue
-   attribute — NO extra API call, so it NEVER fails.
-══════════════════════════════════════════════════════ */
+
 window.openModal = function(cardEl) {
   const overlay = document.getElementById('modal-overlay');
   const loading = document.getElementById('modal-loading');
