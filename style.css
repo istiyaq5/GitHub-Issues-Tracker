@@ -1,0 +1,274 @@
+.login-page {
+  background: #f6f8fa;
+}
+
+.issue-card {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  border-top: 4px solid transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.issue-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.border-open {
+  border-top: 4px solid #22c55e;
+}
+
+.border-closed {
+  border-top: 4px solid #a855f7;
+}
+
+.issue-title {
+  font-weight: 600;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #1f2328;
+}
+
+.issue-desc {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 4px;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.issue-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.label-chip {
+  background: #f3f4f6;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.priority-high {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.priority-medium {
+  background: #fef3c7;
+  color: #d97706;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.priority-low {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tab-btn {
+  padding: 6px 16px;
+  border-radius: 8px;
+  background: #f3f4f6;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  transition: 0.15s;
+}
+
+.tab-btn:hover {
+  background: #e5e7eb;
+}
+
+.active-tab {
+  background: #6e40c9 !important;
+  color: white !important;
+}
+
+.status-dot-open {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+}
+
+.status-dot-closed {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #a855f7;
+  border-radius: 50%;
+}
+
+.status-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.status-icon.open {
+  background: rgba(34, 197, 94, 0.12);
+  border: 2px solid #22c55e;
+}
+
+.status-icon.closed {
+  background: rgba(168, 85, 247, 0.12);
+  border: 2px solid #a855f7;
+}
+
+.status-icon-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.status-icon.open .status-icon-dot {
+  background: #22c55e;
+}
+.status-icon.closed .status-icon-dot {
+  background: #a855f7;
+}
+
+.modal-box {
+  background: white;
+  padding: 28px;
+  border-radius: 14px;
+  width: 520px;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1f2328;
+}
+
+.modal-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.status-open {
+  background: #22c55e;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-closed {
+  background: #a855f7;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.modal-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.modal-desc {
+  color: #4b5563;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.modal-info {
+  background: #f3f4f6;
+  padding: 14px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 14px;
+  gap: 10px;
+}
+
+.modal-label {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+
+.spinner-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #6e40c9;
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: #9ca3af;
+}
+
+.empty-state h3 {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0 0 6px;
+}
+
+@media (max-width: 580px) {
+  .modal-box {
+    padding: 20px;
+    width: 100%;
+  }
+}
